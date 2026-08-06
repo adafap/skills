@@ -1,0 +1,4 @@
+interface:
+  display_name: "California Wrongful Termination Pre-check"
+  short_description: "Organize California termination facts safely"
+  default_prompt: "Use $ca-wrongful-termination-precheck to organize my California termination facts and next steps."
