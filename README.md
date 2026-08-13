@@ -1,45 +1,49 @@
-# Agent Skills by AipengHuang
+# Adafap Agent Skills
 
-Focused, source-grounded Agent Skills that follow the open Agent Skills format.
+Public, source-grounded Agent Skills maintained by the Adafap team. This repository is the single public source for skills.sh and Agent Skills-compatible clients.
 
 ## Install
 
-List the available Skills:
+List Skills:
 
 ```bash
-npx skills add AipengHuang/skills --list
+npx skills add adafap/skills --list
 ```
 
-Install the California wrongful-termination pre-check:
+Install one Skill globally:
 
 ```bash
-npx skills add AipengHuang/skills --skill ca-wrongful-termination-precheck
+npx skills add adafap/skills --skill de-dismissal-severance-check --global
 ```
 
-Then ask your agent to use `$ca-wrongful-termination-precheck` with your facts.
+## Published Skills
 
-## California Wrongful Termination Pre-check
+- `ca-wrongful-termination-precheck`: California employment termination issue pre-check.
+- `de-dismissal-severance-check`: German dismissal deadlines and severance comparison workflow.
+- `open-source-skill-builder`: standards, testing, privacy gates, and release workflow for public Agent Skills.
 
-This Skill organizes California termination facts into:
-
-- a careful issue pre-check;
-- a deadline-urgency map;
-- an evidence-preservation checklist; and
-- a neutral, lawyer-ready chronology.
-
-It does not decide whether a termination was unlawful, predict damages or a settlement, replace a lawyer, file a complaint, or contact an employer or agency. Its legal references point to current California legislative and agency pages and the EEOC; users and agents must recheck primary sources before relying on a deadline or current legal rule.
+Legal-information Skills do not provide individualized legal advice. Recheck current primary sources and seek qualified counsel for urgent or high-impact decisions.
 
 ## Repository layout
 
 ```text
-skills/
-  ca-wrongful-termination-precheck/
-    SKILL.md
-    agents/openai.yaml
-    references/sources.md
-tests/evals.json
+skills/<skill-name>/        # installable Agent Skills only
+tooling/                    # repository validation
+tests/evals/                # fresh-agent evaluation cases
+tests/python/               # deterministic script tests
+registry.json               # publication registry
 ```
 
-## License
+Do not put repository READMEs, plans, CI, or cross-Skill tests inside installable Skill directories.
 
-[MIT](LICENSE)
+## Verify
+
+```bash
+corepack enable
+pnpm install
+pnpm verify
+```
+
+## License and security
+
+The repository uses the [MIT License](LICENSE). Report vulnerabilities and unsafe legal-rule errors through [SECURITY.md](SECURITY.md), not a public issue containing personal facts.

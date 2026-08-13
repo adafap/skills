@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Employment",
+      "description": "Source-dated issue-spotting workflows for employment transitions.",
+      "skills": ["ca-wrongful-termination-precheck", "de-dismissal-severance-check"]
+    },
+    {
+      "title": "Skill Development",
+      "description": "Portable Agent Skill creation, verification, and publication workflows.",
+      "skills": ["open-source-skill-builder"]
+    }
+  ]
+}

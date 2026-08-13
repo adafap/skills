@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open-Source Skill Builder"
+  short_description: "Build, test, publish, and catalog Agent Skills"
+  default_prompt: "Use $open-source-skill-builder to turn my brief into a tested local Skill project; publish only after I approve every public identity detail."

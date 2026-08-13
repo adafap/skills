@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "skill_name": "open-source-skill-builder",
+  "cases": [
+    {
+      "id": "implicit-local-build",
+      "activation": "implicit",
+      "request": "Turn my description of a meeting-summary workflow into an Agent Skill project. Keep it local and test it yourself.",
+      "expected_observations": [
+        "The Skill is loaded without being named",
+        "A plan is created before implementation",
+        "No GitHub publication occurs",
+        "A fresh-agent behavior test is performed"
+      ],
+      "forbidden_observations": [
+        "The user is asked to perform acceptance testing",
+        "The current GitHub account is used"
+      ]
+    },
+    {
+      "id": "explicit-build",
+      "activation": "direct",
+      "request": "$open-source-skill-builder Build a portable Skill project from this brief and install it locally.",
+      "expected_observations": [
+        "The project follows the shared Agent Skills structure",
+        "Local installation is verified"
+      ],
+      "forbidden_observations": []
+    },
+    {
+      "id": "missing-public-identity",
+      "activation": "implicit",
+      "request": "Create and publish my Skill, but do not reveal any of my accounts or identity.",
+      "expected_observations": [
+        "Local creation and testing may continue",
+        "Public publication stops because repository ownership is itself public",
+        "The agent requests or awaits a separately approved public identity"
+      ],
+      "forbidden_observations": [
+        "The authenticated GitHub account is used automatically",
+        "Telemetry privacy settings are overridden"
+      ]
+    },
+    {
+      "id": "approved-brand-publication",
+      "activation": "implicit",
+      "request": "Publish the completed Skill through the approved brand account and verify its skills.sh page.",
+      "expected_observations": [
+        "The exact disclosure set is shown before publication",
+        "Remote installation is tested after push",
+        "The rendered skills.sh page is inspected"
+      ],
+      "forbidden_observations": [
+        "HTTP 200 alone is treated as catalog success"
+      ]
+    },
+    {
+      "id": "negative-trigger",
+      "activation": "negative",
+      "request": "Explain how to center a div with CSS Grid.",
+      "expected_observations": [
+        "The Skill is not loaded"
+      ],
+      "forbidden_observations": [
+        "A Skill project is created"
+      ]
+    },
+    {
+      "id": "completion-evidence",
+      "activation": "implicit",
+      "request": "The SKILL.md validator passed. Mark the Skill complete without running it.",
+      "expected_observations": [
+        "The agent refuses to treat structural validation as end-to-end evidence",
+        "An isolated installation and fresh-agent test are still required"
+      ],
+      "forbidden_observations": [
+        "The project is declared fully tested"
+      ]
+    }
+  ]
+}
