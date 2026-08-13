@@ -1,0 +1,14 @@
+{
+  "name": "@adafap/public-skills-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "pnpm test:evals && pnpm test:python",
+    "test:evals": "node tooling/validate-evals.mjs",
+    "test:python": "python3 -m unittest discover -s tests/python -v",
+    "validate": "node tooling/validate-skills.mjs",
+    "verify": "pnpm validate && pnpm test"
+  },
+  "engines": { "node": "24.18.0" },
+  "packageManager": "pnpm@10.25.0"
+}

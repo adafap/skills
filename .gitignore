@@ -1,4 +1,11 @@
 .DS_Store
-.codex/
+.agents/
 .claude/
-plan/
+.codex/
+.venv/
+__pycache__/
+*.jsonl
+*.log
+*.pyc
+node_modules/
+skills-lock.json

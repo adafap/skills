@@ -1,0 +1,4 @@
+interface:
+  display_name: "German Dismissal & Severance Check"
+  short_description: "Check German dismissal deadlines and offers"
+  default_prompt: "Use $de-dismissal-severance-check to assess my German dismissal deadline, severance offer, and next actions."

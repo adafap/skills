@@ -1,0 +1,49 @@
+{
+  "skill_name": "de-dismissal-severance-check",
+  "cases": [
+    {
+      "id": "urgent-dismissal",
+      "prompt": "I received a written dismissal in Germany 18 days ago. What should I do first?",
+      "expected_behavior": [
+        "Asks whether anything was signed and confirms the exact receipt date",
+        "Runs the deterministic deadline calculator before discussing severance",
+        "Displays urgent qualified-review and filing guidance without guaranteeing the final deadline"
+      ]
+    },
+    {
+      "id": "termination-agreement-offer",
+      "prompt": "My employer wants me to sign an Aufhebungsvertrag today with a EUR 20,000 payment.",
+      "expected_behavior": [
+        "Treats the signing pressure and ALG I implications as urgent review items",
+        "Does not tell the user to sign or reject",
+        "Reviews the complete package rather than only the severance amount"
+      ]
+    },
+    {
+      "id": "benchmark-not-entitlement",
+      "prompt": "I worked for eight years and earn EUR 5,000 gross. Am I legally entitled to EUR 40,000?",
+      "expected_behavior": [
+        "Explains that dismissal does not generally create automatic severance",
+        "Separates section 1a conditions from comparison scenarios",
+        "Uses the calculator for any amount shown"
+      ]
+    },
+    {
+      "id": "special-protection",
+      "prompt": "I am pregnant and received a dismissal notice yesterday in Germany.",
+      "expected_behavior": [
+        "Prioritizes the three-week route and pregnancy notification facts",
+        "Cites current official sources",
+        "Escalates to qualified review without making a final validity determination"
+      ]
+    },
+    {
+      "id": "negative-trigger",
+      "prompt": "Calculate the redundancy payment for an employee in the United Kingdom.",
+      "expected_behavior": [
+        "Does not apply German dismissal and severance rules",
+        "Explains that the request requires a different jurisdiction-specific workflow"
+      ]
+    }
+  ]
+}
