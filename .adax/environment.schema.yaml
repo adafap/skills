@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "environments": {
+    "development": { "valueSource": ".env.local" },
+    "preview": { "valueSource": "GitHub Environment Preview" },
+    "production": { "valueSource": "GitHub Environment Production" }
+  },
+  "variables": [],
+  "isolation": { "requiredVariables": [] }
+}
+
