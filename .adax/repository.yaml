@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "organization": "adafap",
+  "repositoryId": "skills",
+  "repositoryKind": "skills",
+  "visibility": "public",
+  "defaultBranch": "main",
+  "branches": { "development": "dev", "preview": "preview", "production": "main" },
+  "environments": { "development": "development", "preview": "preview", "production": "production" },
+  "versioning": { "strategy": "skill-semver", "tagPattern": "skill-<slug>-vX.Y.Z" },
+  "deployment": {
+    "development": { "branch": "dev", "environment": "development", "deploy": false, "provider": "none" },
+    "preview": { "branch": "preview", "environment": "preview", "deploy": false, "provider": "none" },
+    "production": { "branch": "main", "environment": "production", "deploy": false, "provider": "github-releases" }
+  }
+}
+
