@@ -1,0 +1,17 @@
+name: Promote immutable SHA
+on:
+  workflow_dispatch:
+    inputs:
+      target: { description: Target managed branch, required: true, type: choice, options: [preview, main] }
+      commit_sha: { description: Full 40-character source commit SHA, required: true, type: string }
+jobs:
+  preview:
+    if: inputs.target == 'preview'
+    uses: adafap/.github/.github/workflows/promote.yml@main
+    with: { source-branch: dev, target-branch: preview, commit-sha: "${{ inputs.commit_sha }}" }
+    secrets: inherit
+  production:
+    if: inputs.target == 'main'
+    uses: adafap/.github/.github/workflows/promote.yml@main
+    with: { source-branch: preview, target-branch: main, commit-sha: "${{ inputs.commit_sha }}" }
+    secrets: inherit
