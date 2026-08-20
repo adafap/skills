@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "env:sync": "bash ./scripts/infisical-env.sh pull-all dev",
     "test": "pnpm test:evals && pnpm test:python",
     "test:evals": "node tooling/validate-evals.mjs",
     "test:python": "python3 -m unittest discover -s tests/python -v",
